@@ -61,6 +61,7 @@ function createFirstFivePrimes() {
  */
 function createSizedArray(size) {
   const newArray = [];
+  // eslint-disable-next-line no-plusplus
   for (let i = 0; i < size; i++) {
     newArray.push(i);
   }

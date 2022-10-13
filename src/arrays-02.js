@@ -1,3 +1,4 @@
+/* eslint-disable no-plusplus */
 /*
  * arrays-02.js
  * Language: javascript
@@ -41,7 +42,7 @@
  * @returns {string} - the character at the index
  */
 function findTheCharacterAtIndex(str, indx) {
-  // write your code here & return value
+  return str.charAt(indx);
 }
 
 /**
@@ -52,7 +53,7 @@ function findTheCharacterAtIndex(str, indx) {
  * @returns {string} - the sliced string
  */
 function sliceTheString(str, start, end) {
-  // write your code here & return value
+  return str.slice(start, end);
 }
 
 /**
@@ -62,7 +63,7 @@ function sliceTheString(str, start, end) {
  * @returns {array} - the array of substrings
  */
 function splitTheString(str, separator) {
-  // write your code here & return value
+  return str.split(separator);
 }
 
 /**
@@ -71,7 +72,7 @@ function splitTheString(str, separator) {
  * @returns {string} - the string with all the letters in uppercase
  */
 function makeAllUpperCase(str) {
-  // write your code here & return value
+  return str.toUpperCase();
 }
 
 /**
@@ -80,7 +81,7 @@ function makeAllUpperCase(str) {
  * @returns {string} - the string with all the letters lowercase
  */
 function makeAllLowerCase(str) {
-  // write your code here & return value
+  return str.toLowerCase(str);
 }
 
 /**
@@ -92,7 +93,12 @@ function makeAllLowerCase(str) {
  * ? ex: 'HELLO' => 'Hello'
  */
 function makeWordTitleCase(word) {
-  // write your code here & return value
+  const firstLetter = word.charAt(0);
+  const isUpperNow = firstLetter.toUpperCase();
+  const restLower = word.slice(1);
+  const isLowerNow = restLower.toLowerCase();
+  const finalWord = isUpperNow + isLowerNow;
+  return finalWord;
 }
 
 /**
@@ -104,7 +110,7 @@ function makeWordTitleCase(word) {
  * ? ex: 'hello world', 'hello', 'hi' => 'hi world'
  */
 function replaceTheString(str, oldStr, newStr) {
-  // write your code here & return value
+  return str.replace(oldStr, newStr);
 }
 
 /**
@@ -116,7 +122,12 @@ function replaceTheString(str, oldStr, newStr) {
  * ? hint: use split() and makeWordTitleCase()
  */
 function makeSentenceTitleCase(sentence) {
-  // write your code here & return value
+  const array = sentence.split(' ');
+  for (let a = 0; a < array.length; a++) {
+    array[a] = array[a].charAt(0).toUpperCase() + array[a].slice(1);
+  }
+  const str2 = array.join(' ');
+  return str2;
 }
 
 module.exports = {
